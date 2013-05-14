@@ -77,7 +77,13 @@ The target directory where you keep your CSS stylesheets.
 
 Type: `String|Array`
 
-Lets you specify which files you want to compile. Useful if you don't want to compile the whole folder. Globbing supported. Ignores filenames starting with underscore. Files must be in the directory you specified in `sassDir`.
+Lets you specify which files you want to compile. Useful if you don't want to compile the whole folder. Globbing supported. Ignores filenames starting with underscore unless overridden by `options.ignoreUnderscores`. Files must be in the directory you specified in `sassDir`.
+
+#### ignoreUnderscores
+
+Type: `Boolean`
+
+When used with the `specify` option, determines whether to ignore filenames starting with underscores.
 
 #### imagesDir
 

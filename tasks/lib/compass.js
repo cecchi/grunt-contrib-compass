@@ -102,10 +102,17 @@ exports.init = function (grunt) {
       args.push(options.basePath);
     }
 
+    if (typeof options.ignoreUnderscores === 'undefined') {
+      options.ignoreUnderscores = true;
+    }
+
     if (options.specify) {
+      options.ignoreUnderscores = options.ignoreUnderscores === 'undefined' 
+        ? true 
+        : !!options.ignoreUnderscores;
       var files = grunt.file.expand({
         filter: function (filePath) {
-          return path.basename(filePath)[0] !== '_';
+          return options.ignoreUnderscores && path.basename(filePath)[0] !== '_';
         }
       }, options.specify);
 
